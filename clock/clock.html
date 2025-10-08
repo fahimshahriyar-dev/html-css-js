@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="clock.css" />
+        <title>Timer</title>
+    </head>
+    <body>
+        <div class="clock-container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="clock">Clock</button>
+                <button class="nav-tab" data-tab="timer">Timer</button>
+                <button class="nav-tab" data-tab="alarm">Alarm</button>
+                <button class="nav-tab" data-tab="stopwatch">Stopwatch</button>
+            </div>
+
+            <!-- Clock Tab -->
+            <div class="tab-content active" id="clock">
+                <div class="format-toggle">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="clock-format-toggle" />
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="clock-format-label"
+                        >12H</span
+                    >
+                </div>
+                <div id="time">12:00:00</div>
+                <div class="date" id="date"></div>
+            </div>
+
+            <!-- Timer Tab -->
+            <div class="tab-content" id="timer">
+                <div class="input-group">
+                    <input
+                        type="number"
+                        class="time-input"
+                        id="timer-hours"
+                        placeholder="HH"
+                        min="0"
+                        max="23"
+                    />
+                    <span
+                        style="color: white; font-size: 20px; line-height: 48px"
+                        >:</span
+                    >
+                    <input
+                        type="number"
+                        class="time-input"
+                        id="timer-minutes"
+                        placeholder="MM"
+                        min="0"
+                        max="59"
+                    />
+                    <span
+                        style="color: white; font-size: 20px; line-height: 48px"
+                        >:</span
+                    >
+                    <input
+                        type="number"
+                        class="time-input"
+                        id="timer-seconds"
+                        placeholder="SS"
+                        min="0"
+                        max="59"
+                    />
+                </div>
+                <div class="timer-display" id="timer-display">00:00:00</div>
+                <div class="controls">
+                    <button class="btn primary" id="timer-start">Start</button>
+                    <button class="btn" id="timer-pause">Pause</button>
+                    <button class="btn danger" id="timer-reset">Reset</button>
+                </div>
+            </div>
+
+            <!-- Alarm Tab -->
+            <div class="tab-content" id="alarm">
+                <div class="format-toggle">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="alarm-format-toggle" />
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="alarm-format-label"
+                        >12H</span
+                    >
+                </div>
+                <div class="input-group">
+                    <input
+                        type="number"
+                        class="time-input"
+                        id="alarm-hours"
+                        placeholder="HH"
+                        min="0"
+                        max="23"
+                    />
+                    <span
+                        style="color: white; font-size: 20px; line-height: 48px"
+                        >:</span
+                    >
+                    <input
+                        type="number"
+                        class="time-input"
+                        id="alarm-minutes"
+                        placeholder="MM"
+                        min="0"
+                        max="59"
+                    />
+                    <select
+                        class="time-input"
+                        id="alarm-ampm"
+                        style="display: none; width: auto; padding: 12px 8px"
+                    >
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <div class="controls">
+                    <button class="btn primary" id="alarm-set">
+                        Set Alarm
+                    </button>
+                </div>
+                <div class="alarm-list" id="alarm-list"></div>
+            </div>
+
+            <!-- Stopwatch Tab -->
+            <div class="tab-content" id="stopwatch">
+                <div class="stopwatch-display" id="stopwatch-display">
+                    00:00:00
+                </div>
+                <div class="controls">
+                    <button class="btn success" id="stopwatch-start">
+                        Start
+                    </button>
+                    <button class="btn" id="stopwatch-pause">Pause</button>
+                    <button class="btn" id="stopwatch-lap">Lap</button>
+                    <button class="btn danger" id="stopwatch-reset">
+                        Reset
+                    </button>
+                </div>
+                <div class="lap-times" id="lap-times"></div>
+            </div>
+        </div>
+
+        <div class="notification" id="notification">
+            <span id="notification-text"></span>
+        </div>
+        <script src="clock.js"></script>
+    </body>
+</html>
