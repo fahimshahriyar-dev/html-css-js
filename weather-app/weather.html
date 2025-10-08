@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="weather.css">
+        <title>Weater</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Weather Pro</h1>
+            </div>
+    
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="cityInput" placeholder="Enter city name..." />
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+    
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Getting weather data...</p>
+            </div>
+    
+            <div class="error" id="error">
+                <p>Unable to fetch weather data. Please check the city name and try again.</p>
+            </div>
+    
+            <div class="weather-info" id="weatherInfo">
+                <div class="location" id="location"></div>
+                <div class="datetime" id="datetime"></div>
+                
+                <div class="temperature-container">
+                    <div class="weather-icon" id="weatherIcon">☀️</div>
+                    <div class="temp-display">
+                        <span class="temp-value" id="temperature">--</span>
+                        <span class="temp-unit">°C</span>
+                    </div>
+                </div>
+    
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Feels Like</div>
+                        <div class="detail-value" id="feelsLike">--°C</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Humidity</div>
+                        <div class="detail-value" id="humidity">--%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Wind Speed</div>
+                        <div class="detail-item-container">
+                            <div class="detail-value" id="windSpeed">-- km/h</div>
+                            <div class="windDirection-container">
+                                <i class="fa-solid fa-diamond-turn-right icon"></i>
+                                <div class="detail-subvalue" id="windDirection">--</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Visibility</div>
+                        <div class="detail-value" id="visibility">-- km</div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <script src="weather.js"></script>
+    </body>
+</html>
