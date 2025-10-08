@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="ticTacToe.css" />
+        <link rel="stylesheet" href="animation.css" />
+        <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <div class="start_container">
+            <div class="banner">
+                <img src="./assets/Banner.png" class="bannerImg" alt="banner">
+                <div class="logo">
+                    <img src="./assets/Logo.png" alt="TIC TAC TOE">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="title">
+                        <h3>Red is cross, blue is circle!</h3>
+                    </div>
+                    <div class="start_btn">
+                        <button class="start" onclick="handleStartGame()" id="start">
+                            <i class="fa-solid fa-user"></i>
+                            <div>
+                                <h4>PLAY VS.</h4>
+                                <h1>FRIEND</h1>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- animation -->
+            <div class="icon_section">
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="icons_container">
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                        <i class="fa-solid fa-xmark cross" aria-hidden="true"></i>
+                        <i class="fa-regular fa-circle circle" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <audio autoplay src="./audio/bgm.mp3"></audio>
+        </div>
+
+        <script src="ticTacToe.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

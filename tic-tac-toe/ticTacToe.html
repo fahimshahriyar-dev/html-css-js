@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="ticTacToe.css" />
+        <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="grid" class="grid">
+                <div class="row">
+                    <div
+                        onclick="handleClick(this)"
+                        id="0"
+                        class="col col1"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="1"
+                        class="col col2"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="2"
+                        class="col col3"
+                    ></div>
+                </div>
+                <div class="row">
+                    <div
+                        onclick="handleClick(this)"
+                        id="3"
+                        class="col col4"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="4"
+                        class="col col5"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="5"
+                        class="col col6"
+                    ></div>
+                </div>
+                <div class="row">
+                    <div
+                        onclick="handleClick(this)"
+                        id="6"
+                        class="col col7"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="7"
+                        class="col col8"
+                    ></div>
+                    <div
+                        onclick="handleClick(this)"
+                        id="8"
+                        class="col col9"
+                    ></div>
+                </div>
+            </div>
+
+            <div class="win_line" id="line">
+                <div class="lineX_Container">
+                    <div
+                        class="lineX line1"
+                        id="line1"
+                    ></div>
+                    <div
+                        class="lineX line2"
+                        id="line2"
+                    ></div>
+                    <div
+                        class="lineX line3"
+                        id="line3"
+                    ></div>
+                </div>
+                <div class="lineY_Container">
+                    <div
+                        class="lineY line4"
+                        id="line4"
+                    ></div>
+                    <div
+                        class="lineY line5"
+                        id="line5"
+                    ></div>
+                    <div
+                        class="lineY line6"
+                        id="line6"
+                    ></div>
+                </div>
+                <div class="lineCross_Container">
+                    <div
+                        class="lineXY left line7"
+                        id="line7"
+                    ></div>
+                    <div
+                        class="lineXY right line8"
+                        id="line8"
+                    ></div>
+                </div>
+            </div>
+            
+            <div id="winner_container" class="winner_container">
+                <h1 id="winner"></h1>
+            </div>
+            
+            <div id="matchDraw_container" class="matchDraw_container">
+                <h1 id="matchDraw"></h1>
+            </div>
+        </div>
+        <script src="ticTacToe.js"></script>
+    </body>
+</html>

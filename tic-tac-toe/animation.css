@@ -1,0 +1,79 @@
+.icon_section {
+    position: relative;
+    margin: auto;
+    width: 65%;
+    height: 60%;
+    margin-top: -60px;
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.icons_container {
+    position: relative;
+    top: -60%;
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    transform: rotate(-30deg);
+    height: calc(100% / 7);
+    align-items: center;
+}
+
+.cross {
+    font-size: 64px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    padding: 0 10px;
+}
+
+.cross:hover {
+    transition: 0s;
+    color: #F69779;
+    text-shadow: 0 0 120px #F69779;
+}
+
+.circle {
+    position: relative;
+    top: -6px;
+    padding: 8px 10px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+
+.circle:hover {
+    transition: 0s;
+    color: #63ADD0;
+    text-shadow: 0 0 120px #63ADD0;
+}
+
+.icons_container div {
+    display: flex;
+    animation: scrollIcons 40s linear infinite;
+    animation-delay: -20s;
+}
+
+.icons_container:nth-child(even) div {
+    animation: scrollIconsReverse 40s linear infinite;
+}
+
+@keyframes scrollIcons {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollIconsReverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}

@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+body {
+    font-family: sans-serif
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.start_container {
+    background-color: #DCEEFA;
+    height: 100vh;
+}
+
+.banner {
+    background-color: #CE6953;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.bannerImg {
+    rotate: 30deg;
+    width: 620px;
+    position: relative;
+    left: -35px;
+    top: -60px;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 60px;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    top: 33.5%;
+}
+
+.title h3 {
+    color: white;
+    font-size: 25px;
+    background-color: #CE6953;
+    padding: 25px 15px 25px 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.start_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    top: 60%;
+    z-index: 10 !important;
+}
+
+.start {
+    background-color: #237EC5;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 60px;
+    box-shadow: 0 7px #1C71B4;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    transition: 0.1s;
+}
+
+.start i {
+    font-size: 40px;
+    transition: 0.1s;
+}
+
+.start h4 {
+    color: #45CAF3;
+    display: flex;
+    justify-content: left;
+}
+
+.start:hover {
+    cursor: pointer;
+    padding: 30px 80px;
+}
+
+.start:hover i {
+    font-size: 55px;
+    rotate: -15deg;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    height: 140px;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    font-weight: 700;
+    color: white;
+    -webkit-text-stroke: 5px black;
+}
+
+.col1 {
+    border-right: 10px solid black;
+    border-bottom: 10px solid black;
+    position: relative;
+    top: 10px;
+}
+
+.col2 {
+    padding-top: 10px;
+}
+
+.col3 {
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
+    position: relative;
+    top: 10px;
+}
+
+.col4 {
+    padding-top: 10px;
+}
+
+.col5 {
+    border: 10px solid black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.col6 {
+    padding-top: 10px;
+}
+
+.col7 {
+    border-right: 10px solid black;
+    border-top: 10px solid black;
+    position: relative;
+    top: -10px;
+}
+
+.col9 {
+    border-left: 10px solid black;
+    border-top: 10px solid black;
+    position: relative;
+    top: -10px;
+}
+
+.grid {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playAgain, .cancel {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none;
+}
+
+.btn_container {
+    display: flex;
+    gap: 4px;
+}
+
+.red {
+    background-color: #F69779;
+}
+
+.redGradient {
+    background: linear-gradient(to bottom, #F79471, #B75239);
+}
+
+.blue {
+    background-color: #63ADD0;
+}
+
+.blueGradient {
+    background: linear-gradient(to bottom, #5BADE2, #2A79B3);
+}
+
+.darkGradient {
+    background: linear-gradient(to bottom, #505050, #000000);
+}
+
+.win_line {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    display: none;
+}
+
+.win_line.show {
+    display: flex !important;
+}
+
+.lineX_Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.lineX {
+    width: 400px;
+    height: 20px;
+    background-color: white;
+}
+
+.line1 {
+    margin-bottom: 305px;
+}
+
+.line3 {
+    margin-top: 305px;
+}
+
+.lineY_Container {
+    display: flex;
+}
+
+.lineY {
+    width: 20px;
+    height: 400px;
+    background-color: white;
+}
+
+.line4 {
+    margin-right: 300px;
+}
+
+.line6 {
+    margin-left: 300px;
+}
+
+.lineCross_Container {
+    position: relative;
+    top: -250px;
+    left: -10px;
+}
+
+.lineXY {
+    width: 20px;
+    height: 500px;
+    background-color: white;
+}
+
+.left {
+    rotate: -45deg;
+    position: absolute;
+}
+
+.right {
+    rotate: 45deg;
+    position: absolute;
+}
+
+.line1, .line2, .line3, .line4, .line5, .line6, .line7, .line8 {
+    display: none;
+}
+
+.winner_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner_container h1 {
+    color: white;
+    font-size: 75px;
+    font-weight: 700;
+}
+
+.playAgain {
+    background-color: #237EC5;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 60px;
+    box-shadow: 0 7px #1C71B4;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    transition: 0.1s;
+}
+
+.cancel {
+    background-color: #ee5252;
+    color: white;
+    border-radius: 15px;
+    padding: 25px 60px;
+    box-shadow: 0 7px #1C71B4;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    transition: 0.1s;
+}
+
+.start i {
+    font-size: 40px;
+    transition: 0.1s;
+}
+
+.matchDraw_container {
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.matchDraw_container.show {
+    display: flex !important;
+}
+
+.matchDraw_container h1 {
+    color: white;
+    font-size: 75px;
+    font-weight: 700;
+}
