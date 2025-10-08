@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+<!-- ========================================= FONT ========================================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- ========================================= CSS ========================================= -->
+<link rel="stylesheet" href="todo.css">
+</head>
+<body>
+
+<!-- ========================================= TO DO LIST (HEADER-START) ========================================= -->
+
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-content">
+            <div class="nav-logo">
+                <i class='bx bx-list-check'></i>
+                <span>TaskMaster</span>
+            </div>
+            <div class="search-box">
+                <input type="search" placeholder="Search tasks..." class="search-input" id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class='bx bx-search-alt'></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section id="body">
+    <div class="container">
+        <div class="main-layout">
+            <!-- Add Task Section -->
+            <div class="add-box">
+                <h2>
+                    <i class='bx bx-plus-circle'></i>
+                    <span id="formTitle">Add New Task</span>
+                </h2>
+                <div class="input-group">
+                    <input type="text" class="input-text" id="inputText" placeholder="What needs to be done?">
+                </div>
+                <div class="priority-selector">
+                    <button class="priority-btn" data-priority="low">
+                        <i class='bx bx-down-arrow-circle'></i> Low
+                    </button>
+                    <button class="priority-btn active" data-priority="medium">
+                        <i class='bx bx-minus-circle'></i> Medium
+                    </button>
+                    <button class="priority-btn" data-priority="high">
+                        <i class='bx bx-up-arrow-circle'></i> High
+                    </button>
+                </div>
+                <div class="action-buttons">
+                    <button class="save-btn" id="saveBtn">
+                        <i class='bx bx-save'></i> Save Task
+                    </button>
+                </div>
+                <div class="notification" id="notification"></div>
+            </div>
+
+            <!-- Display Tasks Section -->
+            <div class="display-data">
+                <div class="display-header">
+                    <div class="task-stats" id="taskStats">0 Tasks</div>
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="active">Active</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                        <button class="clear-btn" id="clearBtn">
+                            <i class='bx bx-trash'></i> Clear All
+                        </button>
+                    </div>
+                </div>
+                <div class="task-list" id="taskList"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= TO DO LIST (Body-END) ========================================= -->
+<!-- scroll reveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<!-- ========================================= JS ========================================= -->
+<script src="todo.js"></script>
+
+</body>
+</html>
